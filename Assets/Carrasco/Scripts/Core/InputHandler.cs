@@ -1,18 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Carrasco.Commands;
 using UnityEngine;
-
-public class InputHandler : MonoBehaviour
+namespace Carrasco.Core
 {
-    // Start is called before the first frame update
-    void Start()
+    public class InputHandler
     {
-        
-    }
+        MovePlaceableCommand movePlaceable;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public InputHandler()
+        {
+            this.movePlaceable = new MovePlaceableCommand();
+        }
+
+        public Command Handle()
+        {
+            if(GameManager.Instance.CurrPlaceable) return movePlaceable;
+
+            return null;
+        }
     }
 }

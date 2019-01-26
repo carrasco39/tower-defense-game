@@ -2,17 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Command : MonoBehaviour
+namespace Carrasco.Commands
 {
-    // Start is called before the first frame update
-    void Start()
+    public abstract class Command
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public abstract void Execute();
     }
 }
