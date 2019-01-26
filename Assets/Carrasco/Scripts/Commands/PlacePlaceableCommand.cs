@@ -7,7 +7,7 @@ namespace Carrasco.Commands
     {
         public override void Execute()
         {
-            GameManager.Instance.CurrPlaceable.MovePlaceableObject();
+            GameManager.Instance.CurrPlaceable.PlacePleaceableObject();
         }
     }
 }

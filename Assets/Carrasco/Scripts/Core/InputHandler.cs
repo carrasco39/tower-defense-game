@@ -7,6 +7,7 @@ namespace Carrasco.Core
     public class InputHandler
     {
         MovePlaceableCommand movePlaceable;
+        PlacePlaceableCommand placePlaceable;
 
         public InputHandler()
         {
@@ -15,7 +16,14 @@ namespace Carrasco.Core
 
         public Command Handle()
         {
-            if(GameManager.Instance.CurrPlaceable) return movePlaceable;
+            if (GameManager.Instance.CurrPlaceable)
+            {
+                if (Input.GetMouseButton(0))
+                {
+                    return this.placePlaceable;
+                }
+                return this.movePlaceable;
+            }
 
             return null;
         }

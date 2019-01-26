@@ -10,9 +10,11 @@ namespace Carrasco.Pleaceables {
         private float currLifeTime;
 
         void Update() {
-            if(this.currLifeTime > this.LifeTime) {
+            if(this.IsPlaced && this.currLifeTime > this.LifeTime) {
                 this.gameObject.Recycle(this);
+                print("Recycling");
             }
+            this.currLifeTime += Time.deltaTime;
         }
 
         public override void OnRecycleCallback() {

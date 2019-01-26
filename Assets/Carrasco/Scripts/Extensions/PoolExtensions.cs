@@ -10,9 +10,9 @@ namespace Carrasco.Extensions
             callback.OnRecycleCallback();
         }
 
-        public static void Spawn(this GameObject go, IPoolCallback callback) {
-            GameObjectPool.Spawn(go);
+        public static GameObject Spawn(this GameObject go, IPoolCallback callback) {
             callback.OnSpawnCallback();
+            return GameObjectPool.Spawn(go);
         }
     } 
 }

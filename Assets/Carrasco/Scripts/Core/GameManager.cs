@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Carrasco.Extensions;
 using Carrasco.Pleaceables;
 using UnityEngine;
 namespace Carrasco.Core
@@ -34,6 +35,8 @@ namespace Carrasco.Core
         void Start()
         {
             this.input = new InputHandler();
+            var barrier = Resources.Load<Barrier>("BarrierTest");
+            this.CurrPlaceable = barrier.gameObject.Spawn(barrier).GetComponent<Barrier>();
         }
 
         // Update is called once per frame
