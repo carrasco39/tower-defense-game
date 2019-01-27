@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 914920047}
   - component: {fileID: 914920046}
   m_Layer: 0
-  m_Name: ReachTrigger
+  m_Name: Reach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,7 +423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914920045}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.60214, y: -0.5219502, z: -7.3699403}
+  m_LocalPosition: {x: 18.36, y: -0.5219502, z: -7.3699403}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 6607412195259235227}
@@ -522,7 +522,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: -0.1, y: 2.5}
+      localPivot: {x: -3.528314, y: 2.5}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 52ade5953df0f7b48a2ffbce262817de, type: 2}
@@ -551,7 +551,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: -2.5, y: 2.5}
+      localPivot: {x: -2.337926, y: 2.5}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 52ade5953df0f7b48a2ffbce262817de, type: 2}
@@ -580,7 +580,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: 0.1, y: 2.5}
+      localPivot: {x: 3.528314, y: 2.5}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 52ade5953df0f7b48a2ffbce262817de, type: 2}
@@ -609,7 +609,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: 2.5, y: 2.5}
+      localPivot: {x: 2.337926, y: 2.5}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 52ade5953df0f7b48a2ffbce262817de, type: 2}
@@ -638,7 +638,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: 0.1, y: -2.5}
+      localPivot: {x: 3.528314, y: -2.337926}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 52ade5953df0f7b48a2ffbce262817de, type: 2}
@@ -667,7 +667,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: -0.1, y: -2.5}
+      localPivot: {x: -3.528314, y: -2.337926}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 52ade5953df0f7b48a2ffbce262817de, type: 2}
@@ -684,55 +684,457 @@ MonoBehaviour:
   - array: 090000000c00000014000000
   - array: 0b0000000e00000012000000
   _vertices:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0.2, y: 0, z: 0}
-  - {x: 0, y: 5, z: 0}
-  - {x: 0.2, y: 5, z: 0}
-  - {x: 0.2, y: 0, z: 0}
-  - {x: 0.2, y: 0, z: -5}
-  - {x: 0.2, y: 5, z: 0}
-  - {x: 0.2, y: 5, z: -5}
-  - {x: 0.2, y: 0, z: -5}
+  - {x: 0, y: 0, z: 0.32414818}
+  - {x: 7.056628, y: 0, z: 0.32414818}
+  - {x: 0, y: 5, z: 0.32414818}
+  - {x: 7.056628, y: 5, z: 0.32414818}
+  - {x: 7.056628, y: 0, z: 0.32414818}
+  - {x: 7.056628, y: 0, z: -5}
+  - {x: 7.056628, y: 5, z: 0.32414818}
+  - {x: 7.056628, y: 5, z: -5}
+  - {x: 7.056628, y: 0, z: -5}
   - {x: 0, y: 0, z: -5}
-  - {x: 0.2, y: 5, z: -5}
+  - {x: 7.056628, y: 5, z: -5}
   - {x: 0, y: 5, z: -5}
   - {x: 0, y: 0, z: -5}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0.32414818}
   - {x: 0, y: 5, z: -5}
-  - {x: 0, y: 5, z: 0}
-  - {x: 0, y: 5, z: 0}
-  - {x: 0.2, y: 5, z: 0}
+  - {x: 0, y: 5, z: 0.32414818}
+  - {x: 0, y: 5, z: 0.32414818}
+  - {x: 7.056628, y: 5, z: 0.32414818}
   - {x: 0, y: 5, z: -5}
-  - {x: 0.2, y: 5, z: -5}
+  - {x: 7.056628, y: 5, z: -5}
   - {x: 0, y: 0, z: -5}
-  - {x: 0.2, y: 0, z: -5}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0.2, y: 0, z: 0}
+  - {x: 7.056628, y: 0, z: -5}
+  - {x: 0, y: 0, z: 0.32414818}
+  - {x: 7.056628, y: 0, z: 0.32414818}
   _uv:
   - {x: 0, y: 0}
-  - {x: -0.2, y: 0}
+  - {x: -7.056628, y: 0}
   - {x: 0, y: 5}
-  - {x: -0.2, y: 5}
-  - {x: 0, y: 0}
+  - {x: -7.056628, y: 5}
+  - {x: 0.32414818, y: 0}
   - {x: -5, y: 0}
-  - {x: 0, y: 5}
+  - {x: 0.32414818, y: 5}
   - {x: -5, y: 5}
-  - {x: 0.2, y: 0}
+  - {x: 7.056628, y: 0}
   - {x: 0, y: 0}
-  - {x: 0.2, y: 5}
+  - {x: 7.056628, y: 5}
   - {x: 0, y: 5}
   - {x: 5, y: 0}
-  - {x: 0, y: 0}
+  - {x: -0.32414818, y: 0}
   - {x: 5, y: 5}
-  - {x: 0, y: 5}
-  - {x: 0, y: 0}
-  - {x: 0.2, y: 0}
+  - {x: -0.32414818, y: 5}
+  - {x: 0, y: 0.32414818}
+  - {x: 7.056628, y: 0.32414818}
   - {x: 0, y: -5}
-  - {x: 0.2, y: -5}
+  - {x: 7.056628, y: -5}
   - {x: 0, y: -5}
-  - {x: -0.2, y: -5}
+  - {x: -7.056628, y: -5}
+  - {x: 0, y: 0.32414818}
+  - {x: -7.056628, y: 0.32414818}
+  _uv3: []
+  _uv4: []
+  _tangents: []
+  _sharedIndicesUV: []
+  _colors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  userCollisions: 0
+  isSelectable: 1
+  unwrapParameters:
+    hardAngle: 88
+    packMargin: 4
+    angleError: 8
+    areaError: 15
+  asset_guid: 
+  dontDestroyMeshOnDelete: 0
+  m_selectedFaces: 01000000
+  m_SelectedEdges:
+  - x: 4
+    y: 5
+  - x: 6
+    y: 4
+  - x: 5
+    y: 7
+  - x: 7
+    y: 6
+  m_selectedTriangles: 040000000500000006000000050000000700000006000000
+--- !u!64 &914920046
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914920045}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
+--- !u!1 &990677990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 990677991}
+  - component: {fileID: 990677996}
+  - component: {fileID: 990677995}
+  - component: {fileID: 990677994}
+  - component: {fileID: 990677993}
+  - component: {fileID: 990677992}
+  m_Layer: 0
+  m_Name: EndFloor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &990677991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990677990}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18.964, y: -0.72195035, z: -7.0988803}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6607412195259235227}
+  m_RootOrder: 45
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &990677996
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990677990}
+  m_Mesh: {fileID: 0}
+--- !u!23 &990677995
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990677990}
+  m_Enabled: 1
+  m_CastShadows: 2
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 2
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &990677994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990677990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 16342205, guid: 0472bdc8d6d15384d98f22ee34302f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _entityType: 0
+--- !u!114 &990677993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990677990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 185759285, guid: 0472bdc8d6d15384d98f22ee34302f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _quads:
+  - _indices: 000000000100000002000000010000000300000002000000
+    _distinctIndices: 00000000010000000200000003000000
+    _edges:
+    - x: 0
+      y: 1
+    - x: 2
+      y: 0
+    - x: 1
+      y: 3
+    - x: 3
+      y: 2
+    _smoothingGroup: 0
+    _uv:
+      useWorldSpace: 0
+      flipU: 0
+      flipV: 0
+      swapUV: 0
+      fill: 1
+      scale: {x: 1, y: 1}
+      offset: {x: 0, y: 0}
+      rotation: 0
+      justify: 0
+      localPivot: {x: -1.5, y: 0.1}
+      localSize: {x: 0, y: 0}
+      anchor: 9
+    _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
+    manualUV: 0
+    elementGroup: -1
+    textureGroup: -1
+  - _indices: 040000000500000006000000050000000700000006000000
+    _distinctIndices: 04000000050000000600000007000000
+    _edges:
+    - x: 4
+      y: 5
+    - x: 6
+      y: 4
+    - x: 5
+      y: 7
+    - x: 7
+      y: 6
+    _smoothingGroup: 0
+    _uv:
+      useWorldSpace: 0
+      flipU: 0
+      flipV: 0
+      swapUV: 0
+      fill: 1
+      scale: {x: 1, y: 1}
+      offset: {x: 0, y: 0}
+      rotation: 0
+      justify: 0
+      localPivot: {x: -1.5, y: 0.1}
+      localSize: {x: 0, y: 0}
+      anchor: 9
+    _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
+    manualUV: 0
+    elementGroup: -1
+    textureGroup: -1
+  - _indices: 08000000090000000a000000090000000b0000000a000000
+    _distinctIndices: 08000000090000000a0000000b000000
+    _edges:
+    - x: 8
+      y: 9
+    - x: 10
+      y: 8
+    - x: 9
+      y: 11
+    - x: 11
+      y: 10
+    _smoothingGroup: 0
+    _uv:
+      useWorldSpace: 0
+      flipU: 0
+      flipV: 0
+      swapUV: 0
+      fill: 1
+      scale: {x: 1, y: 1}
+      offset: {x: 0, y: 0}
+      rotation: 0
+      justify: 0
+      localPivot: {x: 1.5, y: 0.1}
+      localSize: {x: 0, y: 0}
+      anchor: 9
+    _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
+    manualUV: 0
+    elementGroup: -1
+    textureGroup: -1
+  - _indices: 0c0000000d0000000e0000000d0000000f0000000e000000
+    _distinctIndices: 0c0000000d0000000e0000000f000000
+    _edges:
+    - x: 12
+      y: 13
+    - x: 14
+      y: 12
+    - x: 13
+      y: 15
+    - x: 15
+      y: 14
+    _smoothingGroup: 0
+    _uv:
+      useWorldSpace: 0
+      flipU: 0
+      flipV: 0
+      swapUV: 0
+      fill: 1
+      scale: {x: 1, y: 1}
+      offset: {x: 0, y: 0}
+      rotation: 0
+      justify: 0
+      localPivot: {x: 1.5, y: 0.1}
+      localSize: {x: 0, y: 0}
+      anchor: 9
+    _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
+    manualUV: 0
+    elementGroup: -1
+    textureGroup: -1
+  - _indices: 100000001100000012000000110000001300000012000000
+    _distinctIndices: 10000000110000001200000013000000
+    _edges:
+    - x: 16
+      y: 17
+    - x: 18
+      y: 16
+    - x: 17
+      y: 19
+    - x: 19
+      y: 18
+    _smoothingGroup: 0
+    _uv:
+      useWorldSpace: 0
+      flipU: 0
+      flipV: 0
+      swapUV: 0
+      fill: 1
+      scale: {x: 1, y: 1}
+      offset: {x: 0, y: 0}
+      rotation: 0
+      justify: 0
+      localPivot: {x: 1.5, y: -1.5}
+      localSize: {x: 0, y: 0}
+      anchor: 9
+    _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
+    manualUV: 0
+    elementGroup: -1
+    textureGroup: -1
+  - _indices: 140000001500000016000000150000001700000016000000
+    _distinctIndices: 14000000150000001600000017000000
+    _edges:
+    - x: 20
+      y: 21
+    - x: 22
+      y: 20
+    - x: 21
+      y: 23
+    - x: 23
+      y: 22
+    _smoothingGroup: 0
+    _uv:
+      useWorldSpace: 0
+      flipU: 0
+      flipV: 0
+      swapUV: 0
+      fill: 1
+      scale: {x: 1, y: 1}
+      offset: {x: 0, y: 0}
+      rotation: 0
+      justify: 0
+      localPivot: {x: -1.5, y: -1.5}
+      localSize: {x: 0, y: 0}
+      anchor: 9
+    _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
+    manualUV: 0
+    elementGroup: -1
+    textureGroup: -1
+  _sharedIndices:
+  - array: 000000000d00000016000000
+  - array: 010000000400000017000000
+  - array: 020000000f00000010000000
+  - array: 030000000600000011000000
+  - array: 050000000800000015000000
+  - array: 070000000a00000013000000
+  - array: 090000000c00000014000000
+  - array: 0b0000000e00000012000000
+  _vertices:
+  - {x: 0, y: 0, z: 0}
+  - {x: 3, y: 0, z: 0}
+  - {x: 0, y: 0.2, z: 0}
+  - {x: 3, y: 0.2, z: 0}
+  - {x: 3, y: 0, z: 0}
+  - {x: 3, y: 0, z: -3}
+  - {x: 3, y: 0.2, z: 0}
+  - {x: 3, y: 0.2, z: -3}
+  - {x: 3, y: 0, z: -3}
+  - {x: 0, y: 0, z: -3}
+  - {x: 3, y: 0.2, z: -3}
+  - {x: 0, y: 0.2, z: -3}
+  - {x: 0, y: 0, z: -3}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0.2, z: -3}
+  - {x: 0, y: 0.2, z: 0}
+  - {x: 0, y: 0.2, z: 0}
+  - {x: 3, y: 0.2, z: 0}
+  - {x: 0, y: 0.2, z: -3}
+  - {x: 3, y: 0.2, z: -3}
+  - {x: 0, y: 0, z: -3}
+  - {x: 3, y: 0, z: -3}
+  - {x: 0, y: 0, z: 0}
+  - {x: 3, y: 0, z: 0}
+  _uv:
   - {x: 0, y: 0}
-  - {x: -0.2, y: 0}
+  - {x: -3, y: 0}
+  - {x: 0, y: 0.2}
+  - {x: -3, y: 0.2}
+  - {x: 0, y: 0}
+  - {x: -3, y: 0}
+  - {x: 0, y: 0.2}
+  - {x: -3, y: 0.2}
+  - {x: 3, y: 0}
+  - {x: 0, y: 0}
+  - {x: 3, y: 0.2}
+  - {x: 0, y: 0.2}
+  - {x: 3, y: 0}
+  - {x: 0, y: 0}
+  - {x: 3, y: 0.2}
+  - {x: 0, y: 0.2}
+  - {x: 0, y: 0}
+  - {x: 3, y: 0}
+  - {x: 0, y: -3}
+  - {x: 3, y: -3}
+  - {x: 0, y: -3}
+  - {x: -3, y: -3}
+  - {x: 0, y: 0}
+  - {x: -3, y: 0}
   _uv3: []
   _uv4: []
   _tangents: []
@@ -774,15 +1176,15 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!64 &914920046
+--- !u!64 &990677992
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914920045}
+  m_GameObject: {fileID: 990677990}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Convex: 1
@@ -1984,7 +2386,7 @@ GameObject:
   - component: {fileID: 6607412194055434474}
   - component: {fileID: 6607412194055434473}
   - component: {fileID: 6607412194055434472}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2378,7 +2780,7 @@ GameObject:
   - component: {fileID: 6607412194149023718}
   - component: {fileID: 6607412194149023717}
   - component: {fileID: 6607412194149023716}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2772,7 +3174,7 @@ GameObject:
   - component: {fileID: 6607412194199391929}
   - component: {fileID: 6607412194199391928}
   - component: {fileID: 6607412194199391927}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3166,12 +3568,12 @@ GameObject:
   - component: {fileID: 6607412194359238998}
   - component: {fileID: 6607412194359238997}
   - component: {fileID: 6607412194359238996}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: FLOOR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6607412194359238995
 Transform:
@@ -3543,7 +3945,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!1 &6607412194419231236
@@ -3560,7 +3962,7 @@ GameObject:
   - component: {fileID: 6607412194419231239}
   - component: {fileID: 6607412194419231238}
   - component: {fileID: 6607412194419231237}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3954,7 +4356,7 @@ GameObject:
   - component: {fileID: 6607412194472105378}
   - component: {fileID: 6607412194472105377}
   - component: {fileID: 6607412194472105376}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4348,9 +4750,9 @@ GameObject:
   - component: {fileID: 6607412194484469777}
   - component: {fileID: 6607412194484469776}
   - component: {fileID: 6607412194484469775}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: FLOOR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -4725,7 +5127,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!1 &6607412194560466077
@@ -4742,9 +5144,9 @@ GameObject:
   - component: {fileID: 6607412194560466081}
   - component: {fileID: 6607412194560466080}
   - component: {fileID: 6607412194560466079}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: FLOOR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -5119,7 +5521,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!1 &6607412194633120615
@@ -5136,9 +5538,9 @@ GameObject:
   - component: {fileID: 6607412194633120619}
   - component: {fileID: 6607412194633120618}
   - component: {fileID: 6607412194633120617}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: FLOOR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -5513,7 +5915,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!1 &6607412194653180830
@@ -5530,9 +5932,9 @@ GameObject:
   - component: {fileID: 6607412194653180834}
   - component: {fileID: 6607412194653180833}
   - component: {fileID: 6607412194653180832}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: FLOOR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -5907,7 +6309,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!1 &6607412194723844366
@@ -5924,9 +6326,9 @@ GameObject:
   - component: {fileID: 6607412194723844370}
   - component: {fileID: 6607412194723844369}
   - component: {fileID: 6607412194723844368}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: FLOOR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -6301,7 +6703,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!1 &6607412194730475424
@@ -6318,9 +6720,9 @@ GameObject:
   - component: {fileID: 6607412194730475428}
   - component: {fileID: 6607412194730475427}
   - component: {fileID: 6607412194730475426}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: FLOOR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -6695,7 +7097,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!1 &6607412194762455310
@@ -6712,7 +7114,7 @@ GameObject:
   - component: {fileID: 6607412194762455313}
   - component: {fileID: 6607412194762455312}
   - component: {fileID: 6607412194762455311}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7106,9 +7508,9 @@ GameObject:
   - component: {fileID: 6607412194819359166}
   - component: {fileID: 6607412194819359165}
   - component: {fileID: 6607412194819359164}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: FLOOR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -7483,7 +7885,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!1 &6607412194839506045
@@ -7500,9 +7902,9 @@ GameObject:
   - component: {fileID: 6607412194839505921}
   - component: {fileID: 6607412194839505920}
   - component: {fileID: 6607412194839506047}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: FLOOR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -7877,7 +8279,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!1 &6607412194840768555
@@ -7894,7 +8296,7 @@ GameObject:
   - component: {fileID: 6607412194840768558}
   - component: {fileID: 6607412194840768557}
   - component: {fileID: 6607412194840768556}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8288,7 +8690,7 @@ GameObject:
   - component: {fileID: 6607412194858721919}
   - component: {fileID: 6607412194858721918}
   - component: {fileID: 6607412194858721917}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8682,7 +9084,7 @@ GameObject:
   - component: {fileID: 6607412194882757963}
   - component: {fileID: 6607412194882757962}
   - component: {fileID: 6607412194882757961}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9076,7 +9478,7 @@ GameObject:
   - component: {fileID: 6607412194887403679}
   - component: {fileID: 6607412194887403678}
   - component: {fileID: 6607412194887403677}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9470,9 +9872,9 @@ GameObject:
   - component: {fileID: 6607412194896635843}
   - component: {fileID: 6607412194896635842}
   - component: {fileID: 6607412194896635841}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: FLOOR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -9847,7 +10249,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!1 &6607412194900603969
@@ -9864,7 +10266,7 @@ GameObject:
   - component: {fileID: 6607412194900603972}
   - component: {fileID: 6607412194900603971}
   - component: {fileID: 6607412194900603970}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10258,7 +10660,7 @@ GameObject:
   - component: {fileID: 6607412194933443000}
   - component: {fileID: 6607412194933442999}
   - component: {fileID: 6607412194933442998}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10652,7 +11054,7 @@ GameObject:
   - component: {fileID: 6607412194963037672}
   - component: {fileID: 6607412194963037671}
   - component: {fileID: 6607412194963037670}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11046,7 +11448,7 @@ GameObject:
   - component: {fileID: 6607412194997025505}
   - component: {fileID: 6607412194997025504}
   - component: {fileID: 6607412194997025503}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11440,9 +11842,9 @@ GameObject:
   - component: {fileID: 6607412195022822253}
   - component: {fileID: 6607412195022822252}
   - component: {fileID: 6607412195022822251}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: FLOOR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -11817,7 +12219,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!1 &6607412195157549178
@@ -11834,7 +12236,7 @@ GameObject:
   - component: {fileID: 6607412195157549181}
   - component: {fileID: 6607412195157549180}
   - component: {fileID: 6607412195157549179}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12223,7 +12625,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6607412195259235227}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Scenario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12286,6 +12688,7 @@ Transform:
   - {fileID: 1319206980}
   - {fileID: 620682224}
   - {fileID: 914920051}
+  - {fileID: 990677991}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12303,9 +12706,9 @@ GameObject:
   - component: {fileID: 6607412195261004857}
   - component: {fileID: 6607412195261004856}
   - component: {fileID: 6607412195261004855}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: FLOOR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -12680,7 +13083,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!1 &6607412195262770043
@@ -12697,9 +13100,9 @@ GameObject:
   - component: {fileID: 6607412195262770047}
   - component: {fileID: 6607412195262770046}
   - component: {fileID: 6607412195262770045}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: FLOOR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -13074,7 +13477,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!1 &6607412195283851352
@@ -13091,7 +13494,7 @@ GameObject:
   - component: {fileID: 6607412195283851355}
   - component: {fileID: 6607412195283851354}
   - component: {fileID: 6607412195283851353}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13485,7 +13888,7 @@ GameObject:
   - component: {fileID: 6607412195297421165}
   - component: {fileID: 6607412195297421164}
   - component: {fileID: 6607412195297421163}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13879,7 +14282,7 @@ GameObject:
   - component: {fileID: 6607412195501398521}
   - component: {fileID: 6607412195501398520}
   - component: {fileID: 6607412195501398519}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14273,7 +14676,7 @@ GameObject:
   - component: {fileID: 6607412195589694285}
   - component: {fileID: 6607412195589694284}
   - component: {fileID: 6607412195589694283}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15378,7 +15781,7 @@ MeshCollider:
   m_GameObject: {fileID: 6607412195593452838}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -15397,7 +15800,7 @@ GameObject:
   - component: {fileID: 6607412195598462299}
   - component: {fileID: 6607412195598462298}
   - component: {fileID: 6607412195598462297}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15791,7 +16194,7 @@ GameObject:
   - component: {fileID: 6607412195671448069}
   - component: {fileID: 6607412195671448068}
   - component: {fileID: 6607412195671448067}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16185,7 +16588,7 @@ GameObject:
   - component: {fileID: 6607412195745273272}
   - component: {fileID: 6607412195745273271}
   - component: {fileID: 6607412195745273270}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16579,7 +16982,7 @@ GameObject:
   - component: {fileID: 6607412195800006477}
   - component: {fileID: 6607412195800006476}
   - component: {fileID: 6607412195800006475}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16973,7 +17376,7 @@ GameObject:
   - component: {fileID: 6607412195825575217}
   - component: {fileID: 6607412195825575216}
   - component: {fileID: 6607412195825575215}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17367,9 +17770,9 @@ GameObject:
   - component: {fileID: 6607412195914883535}
   - component: {fileID: 6607412195914883534}
   - component: {fileID: 6607412195914883533}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: FLOOR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -17744,7 +18147,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!1 &6607412196071080794
@@ -17761,7 +18164,7 @@ GameObject:
   - component: {fileID: 6607412196071080797}
   - component: {fileID: 6607412196071080796}
   - component: {fileID: 6607412196071080795}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}

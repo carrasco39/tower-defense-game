@@ -12,16 +12,20 @@ namespace Carrasco.Core
         public InputHandler()
         {
             this.movePlaceable = new MovePlaceableCommand();
+            this.placePlaceable = new PlacePlaceableCommand();
         }
 
         public Command Handle()
         {
+
             if (GameManager.Instance.CurrPlaceable)
             {
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButtonUp(0))
                 {
+                    Debug.Log("Here");
                     return this.placePlaceable;
                 }
+
                 return this.movePlaceable;
             }
 

@@ -4,6 +4,7 @@ using Carrasco.Core;
 using Carrasco.Interfaces;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Linq;
 namespace Carrasco.Pleaceables
 {
     public abstract class BasePlaceable : MonoBehaviour, IPoolCallback
@@ -21,41 +22,29 @@ namespace Carrasco.Pleaceables
 
         public virtual void MovePlaceableObject()
         {
-
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit hitInfo;
-            if (Physics.Raycast(ray, out hitInfo))
+            var layerMask = LayerMask.GetMask("Surface");
+            var hits = Physics.RaycastAll(ray, 1000, layerMask);
+            this.renderer.material = Resources.Load<Material>("NoPlaceMat");
+            foreach (var hit in hits)
             {
-                if (hitInfo.transform.tag == this.SurfaceTag)
+                this.transform.position = hit.point + Vector3.up * .1f;
+                this.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                if (hit.transform.tag == this.SurfaceTag)
                 {
                     this.renderer.material = Resources.Load<Material>("CanPlaceMat");
-                    print("here");
                 }
-                else
-                {
-                    this.renderer.material = Resources.Load<Material>("NoCanPlaceMat");
-                }
-                this.transform.position = hitInfo.point;
-                this.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+                //TODO: REFACTOR AND REDO IT BETTER
             }
         }
 
         public virtual void PlacePleaceableObject()
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit hitInfo;
-            if (Physics.Raycast(ray, out hitInfo))
-            {
-                if (hitInfo.transform.tag == this.SurfaceTag)
-                {
-                    this.transform.position = hitInfo.point;
-                    this.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
-                    this.IsPlaced = true;
-                    this.renderer.material = this.defaultMaterial;
-                    GameManager.Instance.CurrPlaceable = null;
-                }
+            print(this.renderer.material.name);
+            if(this.renderer.material.name.Contains("CanPlaceMat")) {
+                this.renderer.material = this.defaultMaterial;
+                this.IsPlaced = true;
+                GameManager.Instance.CurrPlaceable = null;
             }
         }
 
