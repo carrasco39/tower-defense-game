@@ -5,6 +5,8 @@ using Carrasco.Interfaces;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
+using Carrasco.Extensions;
+
 namespace Carrasco.Pleaceables
 {
     public abstract class BasePlaceable : MonoBehaviour, IPoolCallback
@@ -16,19 +18,24 @@ namespace Carrasco.Pleaceables
         public Canvas canvas;
         public new Collider collider;
         private new MeshRenderer renderer;
+        private Outline outline;
 
         public virtual void Start()
         {
             this.renderer = GetComponent<MeshRenderer>();
             this.collider = GetComponent<Collider>();
             this.canvas = GetComponentInChildren<Canvas>();
+            this.outline = GetComponent<Outline>();
             this.defaultMaterial = this.renderer.material;
             this.collider.enabled = false;
             this.canvas.enabled = false;
+            this.outline.enabled = false;
         }
 
         public virtual void MovePlaceableObject()
         {
+            this.outline.OutlineColor = new Color32(255, 0, 0,255);
+            this.outline.enabled = true;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             var layerMask = LayerMask.GetMask("Surface");
             var hits = Physics.RaycastAll(ray, 1000, layerMask);
@@ -40,6 +47,7 @@ namespace Carrasco.Pleaceables
                 if (hit.transform.tag == this.SurfaceTag)
                 {
                     this.renderer.material = Resources.Load<Material>("CanPlaceMat");
+                    this.outline.OutlineColor = new Color32(0, 255, 255,255);
                 }
                 //TODO: REFACTOR AND REDO IT BETTER
             }
@@ -53,19 +61,27 @@ namespace Carrasco.Pleaceables
                 this.IsConfirmPlacing = true;
                 this.renderer.material = Resources.Load<Material>("PlaceHolderMat");
                 this.canvas.enabled = true;
+                this.outline.enabled = false;
             }
         }
 
         public virtual void OnPlacedSelected() {
-            if(GameManager.Instance.CurrPlaceable == this && this.IsPlaced) {
+            if(GameManager.Instance.SelectedPlacedPlaceable == this && this.IsPlaced) {
                this.canvas.enabled = true;
+               this.outline.enabled = true;
             }
+        }
+        public virtual void OnPlacedDeselected() {
+            this.canvas.enabled = false;
+            this.outline.enabled = false;
+            GameManager.Instance.SelectedPlacedPlaceable = null;
         }
 
         public virtual void ConfirmPlace()
         {
             this.IsConfirmPlacing = false;
             this.canvas.enabled = false;
+            this.collider.enabled = true;
             this.IsPlaced = true;
             this.renderer.material = this.defaultMaterial;
             GameManager.Instance.CurrPlaceable = null;
@@ -77,13 +93,21 @@ namespace Carrasco.Pleaceables
             this.canvas.enabled = false;
         }
 
+        public virtual void RemovePlaced() {
+            Debug.Log("removing");
+            this.gameObject.Recycle(this);
+            GameManager.Instance.SelectedPlacedPlaceable = null;
+        }
+
 
         public virtual void OnRecycleCallback()
         {
             this.renderer.material = this.defaultMaterial;
             this.IsPlaced = false;
             this.collider.enabled = false;
+            //this.canvas.SendMessage("ToggleCanvas",0,SendMessageOptions.DontRequireReceiver);
             this.canvas.enabled = false;
+            this.outline.enabled = false;
         }
 
         public void OnSpawnCallback()

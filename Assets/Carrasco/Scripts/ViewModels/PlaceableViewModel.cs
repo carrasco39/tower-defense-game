@@ -15,72 +15,49 @@ namespace Carrasco.ViewModels
         void Start()
         {
             this.buttons = this.GetComponentsInChildren<Button>();
-            this.buttons.Where(x => x.name == "DeleteBtn").First().gameObject.SetActive(false);
-            this.buttons.Where(x => x.name != "DeleteBtn").Select(x =>
-            {
-                x.gameObject.SetActive(true);
-                return x;
-            });
+            this.ToggleCanvas(0);
         }
-
-        void OnEnabled()
-        {
-            this.buttons.Where(x => x.name == "DeleteBtn").First().gameObject.SetActive(false);
-            this.buttons.Where(x => x.name != "DeleteBtn").Select(x =>
-            {
-                x.gameObject.SetActive(true);
-                return x;
-            });
-        }
-
 
         [Binding]
         public void OnConfirmPlace() => GameManager.Instance.CurrPlaceable.ConfirmPlace();
         [Binding]
         public void OnCancelPlace() => GameManager.Instance.CurrPlaceable.CancelPlace();
         [Binding]
-        public void OnDelete()
-        {
-            GameManager.Instance.CurrPlaceable.gameObject.Recycle(GameManager.Instance.CurrPlaceable);
-        }
+        public void OnRemove() => GameManager.Instance.SelectedPlacedPlaceable.RemovePlaced();
 
-        public void Update()
-        {
-            if (
-                GameManager.Instance.CurrPlaceable &&
-                GameManager.Instance.CurrPlaceable.gameObject == this.transform.parent.gameObject &&
-                GameManager.Instance.CurrPlaceable.IsPlaced
-                )
-            {
-                this.ToggleButtons("remove");
+        void Update() {
+            if(GameManager.Instance.SelectedPlacedPlaceable && GameManager.Instance.SelectedPlacedPlaceable.canvas.gameObject == this.gameObject) {
+                this.ToggleCanvas(1);
+                return;
             }
+            this.ToggleCanvas(0);
         }
 
-        public void ToggleButtons(string btn)
+        private void ToggleCanvas(int num)
         {
-            switch (btn)
+            switch (num)
             {
-                case "remove":
-                    this.buttons.Select(x =>
+                case 0:
+                    foreach (var button in this.buttons)
                     {
-                        if(x.name == "DeleteBtn") {
-                            x.gameObject.SetActive(true);
-                            return x;
+                        if (button.name == "DeleteBtn")
+                        {
+                            button.gameObject.SetActive(false);
+                            continue;
                         }
-                        x.gameObject.SetActive(false);
-                        return x;
-                    });
+                        button.gameObject.SetActive(true);
+                    }
                     break;
-                default:
-                    this.buttons.Select(x =>
+                case 1:
+                    foreach (var button in this.buttons)
                     {
-                        if(x.name != "DeleteBtn") {
-                            x.gameObject.SetActive(true);
-                            return x;
+                        if (button.name == "DeleteBtn")
+                        {
+                            button.gameObject.SetActive(true);
+                            continue;
                         }
-                        x.gameObject.SetActive(false);
-                        return x;
-                    });
+                        button.gameObject.SetActive(false);
+                    }
                     break;
             }
         }

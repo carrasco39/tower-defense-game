@@ -7,7 +7,7 @@ namespace Carrasco.Commands
     {
         public override void Execute()
         {
-            GameManager.Instance.CurrPlaceable.OnPlacedSelected();
+            GameManager.Instance.SelectedPlacedPlaceable.OnPlacedSelected();
         }
     }
 }

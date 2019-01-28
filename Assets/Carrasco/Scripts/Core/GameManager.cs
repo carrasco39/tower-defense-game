@@ -23,6 +23,8 @@ namespace Carrasco.Core
             }
         }
 
+        public BasePlaceable SelectedPlacedPlaceable { get; set; }
+
         private InputHandler input;
         private static GameManager _instance;
 

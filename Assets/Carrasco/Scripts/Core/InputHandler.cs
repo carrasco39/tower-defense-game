@@ -10,6 +10,7 @@ namespace Carrasco.Core
         MovePlaceableCommand movePlaceable;
         PlacePlaceableCommand placePlaceable;
         SelectPlaceableCommand selectPlaceable;
+        DeselectPlaceableCommand deselectPlaceable;
 
 
         public InputHandler()
@@ -17,21 +18,11 @@ namespace Carrasco.Core
             this.movePlaceable = new MovePlaceableCommand();
             this.placePlaceable = new PlacePlaceableCommand();
             this.selectPlaceable = new SelectPlaceableCommand();
+            this.deselectPlaceable = new DeselectPlaceableCommand();
         }
 
         public Command Handle()
         {
-
-            if (GameManager.Instance.CurrPlaceable)
-            {
-                if (Input.GetMouseButtonUp(0))
-                {
-                    Debug.Log("Here");
-                    return this.placePlaceable;
-                }
-
-                return this.movePlaceable;
-            }
 
             if (Input.GetMouseButtonUp(0))
             {
@@ -42,14 +33,32 @@ namespace Carrasco.Core
                 {
                     Debug.Log(hit.transform.name);
                     var placeable = hit.transform.GetComponent<BasePlaceable>();
-                    if (placeable)
+                    if (placeable && placeable.IsPlaced)
                     {
-                        Debug.Log("Entrando aqui");
-                        GameManager.Instance.CurrPlaceable = placeable;
-                        return selectPlaceable;
+                        if (!GameManager.Instance.SelectedPlacedPlaceable)
+                        {
+                            GameManager.Instance.SelectedPlacedPlaceable = placeable;
+                            return selectPlaceable;
+                        }
+                    }
+                    else if (!placeable && GameManager.Instance.SelectedPlacedPlaceable)
+                    {
+                        return deselectPlaceable;
+                    }
+
+                    if (!placeable && GameManager.Instance.CurrPlaceable && !GameManager.Instance.CurrPlaceable.IsPlaced)
+                    {
+                        return placePlaceable;
                     }
                 }
+
             }
+
+            if (GameManager.Instance.CurrPlaceable && !GameManager.Instance.CurrPlaceable.IsPlaced)
+            {
+                return this.movePlaceable;
+            }
+
 
             return null;
         }
