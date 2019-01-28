@@ -12,12 +12,19 @@ namespace Carrasco.Pleaceables
         public string SurfaceTag;
         public Material defaultMaterial;
         public bool IsPlaced;
+        public bool IsConfirmPlacing;
+        public Canvas canvas;
+        public new Collider collider;
         private new MeshRenderer renderer;
 
         public virtual void Start()
         {
             this.renderer = GetComponent<MeshRenderer>();
+            this.collider = GetComponent<Collider>();
+            this.canvas = GetComponentInChildren<Canvas>();
             this.defaultMaterial = this.renderer.material;
+            this.collider.enabled = false;
+            this.canvas.enabled = false;
         }
 
         public virtual void MovePlaceableObject()
@@ -40,23 +47,50 @@ namespace Carrasco.Pleaceables
 
         public virtual void PlacePleaceableObject()
         {
-            print(this.renderer.material.name);
-            if(this.renderer.material.name.Contains("CanPlaceMat")) {
-                this.renderer.material = this.defaultMaterial;
-                this.IsPlaced = true;
-                GameManager.Instance.CurrPlaceable = null;
+            //print(this.renderer && this.renderer.material.name);
+            if (this.renderer && this.renderer.material.name.Contains("CanPlaceMat"))
+            {
+                this.IsConfirmPlacing = true;
+                this.renderer.material = Resources.Load<Material>("PlaceHolderMat");
+                this.canvas.enabled = true;
             }
         }
+
+        public virtual void OnPlacedSelected() {
+            if(GameManager.Instance.CurrPlaceable == this && this.IsPlaced) {
+               this.canvas.enabled = true;
+            }
+        }
+
+        public virtual void ConfirmPlace()
+        {
+            this.IsConfirmPlacing = false;
+            this.canvas.enabled = false;
+            this.IsPlaced = true;
+            this.renderer.material = this.defaultMaterial;
+            GameManager.Instance.CurrPlaceable = null;
+            
+        }
+        public virtual void CancelPlace()
+        {
+            this.IsConfirmPlacing = false;
+            this.canvas.enabled = false;
+        }
+
 
         public virtual void OnRecycleCallback()
         {
             this.renderer.material = this.defaultMaterial;
             this.IsPlaced = false;
+            this.collider.enabled = false;
+            this.canvas.enabled = false;
         }
 
         public void OnSpawnCallback()
         {
-
         }
+
+
+        //TODO: ADD OBJECT ROTATION COMMAND
     }
 }

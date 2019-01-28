@@ -9,7 +9,19 @@ namespace Carrasco.Core
     {
         public float Score;
         public float Life = 10;
-        public BasePlaceable CurrPlaceable;
+        private BasePlaceable currPlaceable;
+
+        public BasePlaceable CurrPlaceable
+        {
+            get
+            {
+                return currPlaceable;
+            }
+            set
+            {
+                currPlaceable = value;
+            }
+        }
 
         private InputHandler input;
         private static GameManager _instance;
@@ -35,8 +47,6 @@ namespace Carrasco.Core
         void Start()
         {
             this.input = new InputHandler();
-            var barrier = Resources.Load<Barrier>("BarrierTest");
-            this.CurrPlaceable = barrier.gameObject.Spawn(barrier).GetComponent<Barrier>();
         }
 
         // Update is called once per frame
