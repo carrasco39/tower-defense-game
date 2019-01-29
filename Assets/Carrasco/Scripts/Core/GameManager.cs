@@ -32,11 +32,13 @@ namespace Carrasco.Core
         {
             get
             {
-                if(!_instance) {
+                if (!_instance)
+                {
                     _instance = FindObjectOfType<GameManager>();
                 }
 
-                if(!_instance) {
+                if (!_instance)
+                {
                     _instance = new GameObject("GameManager").AddComponent<GameManager>();
                 }
 

@@ -21,7 +21,15 @@ namespace Carrasco.ViewModels
             {
                 var barrier = Resources.Load<Barrier>("BarrierTest");
                 GameManager.Instance.CurrPlaceable = barrier.gameObject.Spawn(barrier).GetComponent<Barrier>();
-                //this.ToggleCanvas();
+            }
+        }
+        [Binding]
+        public void AddTower()
+        {
+            if (!GameManager.Instance.CurrPlaceable)
+            {
+                var tower = Resources.Load<Tower>("Tower");
+                GameManager.Instance.CurrPlaceable = tower.gameObject.Spawn(tower).GetComponent<Tower>();
             }
         }
 

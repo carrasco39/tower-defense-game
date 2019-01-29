@@ -22,10 +22,10 @@ namespace Carrasco.Pleaceables
 
         public virtual void Start()
         {
-            this.renderer = GetComponent<MeshRenderer>();
-            this.collider = GetComponent<Collider>();
+            this.renderer = GetComponentInChildren<MeshRenderer>();
+            this.collider = GetComponentInChildren<Collider>();
             this.canvas = GetComponentInChildren<Canvas>();
-            this.outline = GetComponent<Outline>();
+            this.outline = GetComponentInChildren<Outline>();
             this.defaultMaterial = this.renderer.material;
             this.collider.enabled = false;
             this.canvas.enabled = false;
@@ -34,7 +34,7 @@ namespace Carrasco.Pleaceables
 
         public virtual void MovePlaceableObject()
         {
-            this.outline.OutlineColor = new Color32(255, 0, 0,255);
+            this.outline.OutlineColor = new Color32(255, 0, 0, 255);
             this.outline.enabled = true;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             var layerMask = LayerMask.GetMask("Surface");
@@ -47,7 +47,7 @@ namespace Carrasco.Pleaceables
                 if (hit.transform.tag == this.SurfaceTag)
                 {
                     this.renderer.material = Resources.Load<Material>("CanPlaceMat");
-                    this.outline.OutlineColor = new Color32(0, 255, 255,255);
+                    this.outline.OutlineColor = new Color32(0, 255, 255, 255);
                 }
                 //TODO: REFACTOR AND REDO IT BETTER
             }
@@ -65,18 +65,22 @@ namespace Carrasco.Pleaceables
             }
         }
 
-        public virtual void OnPlacedSelected() {
-            if(GameManager.Instance.SelectedPlacedPlaceable == this && this.IsPlaced) {
-               this.canvas.enabled = true;
-               this.outline.enabled = true;
+        public virtual void OnPlacedSelected()
+        {
+            if (GameManager.Instance.SelectedPlacedPlaceable == this && this.IsPlaced)
+            {
+                this.canvas.enabled = true;
+                this.outline.enabled = true;
+                this.outline.OutlineColor = new Color32(255, 255, 0, 255);
             }
         }
-        public virtual void OnPlacedDeselected() {
+
+        public virtual void OnPlacedDeselected()
+        {
             this.canvas.enabled = false;
             this.outline.enabled = false;
             GameManager.Instance.SelectedPlacedPlaceable = null;
         }
-
         public virtual void ConfirmPlace()
         {
             this.IsConfirmPlacing = false;
@@ -85,20 +89,20 @@ namespace Carrasco.Pleaceables
             this.IsPlaced = true;
             this.renderer.material = this.defaultMaterial;
             GameManager.Instance.CurrPlaceable = null;
-            
+
         }
+
         public virtual void CancelPlace()
         {
             this.IsConfirmPlacing = false;
             this.canvas.enabled = false;
         }
-
-        public virtual void RemovePlaced() {
+        public virtual void RemovePlaced()
+        {
             Debug.Log("removing");
             this.gameObject.Recycle(this);
             GameManager.Instance.SelectedPlacedPlaceable = null;
         }
-
 
         public virtual void OnRecycleCallback()
         {
@@ -113,8 +117,6 @@ namespace Carrasco.Pleaceables
         public void OnSpawnCallback()
         {
         }
-
-
         //TODO: ADD OBJECT ROTATION COMMAND
     }
 }

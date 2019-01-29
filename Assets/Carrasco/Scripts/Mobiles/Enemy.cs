@@ -12,6 +12,7 @@ namespace Carrasco.Mobiles
         {
             this.agent = GetComponent<NavMeshAgent>();
             this.animator = GetComponent<Animator>();
+            this.agent.speed = this.Speed;
             this.Move();
         }
 

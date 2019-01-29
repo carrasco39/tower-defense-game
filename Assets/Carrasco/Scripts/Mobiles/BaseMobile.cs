@@ -6,9 +6,11 @@ namespace Carrasco.Mobiles
 {
     public abstract class BaseMobile : MonoBehaviour
     {
-        private float health;
-        
         public float MaxHealth;
+        public float Speed;
+
+        [SerializeField]
+        private float health;
         public float Health
         {
             get
