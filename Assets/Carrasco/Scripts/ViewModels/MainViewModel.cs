@@ -6,12 +6,40 @@ using UnityWeld.Binding;
 using Carrasco.Core;
 using Carrasco.Pleaceables;
 using Carrasco.Extensions;
+using System;
 
 namespace Carrasco.ViewModels
 {
     [Binding]
     public class MainViewModel : MonoBehaviour, INotifyPropertyChanged
     {
+        private string score;
+
+        [Binding]
+        public string Score
+        {
+            get
+            {
+                return score;
+            }
+            set
+            {
+                if (score == value) return;
+
+                score = value;
+
+                OnPropertyChanged("Score");
+            }
+        }
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            if (this.PropertyChanged != null)
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         [Binding]
@@ -19,8 +47,11 @@ namespace Carrasco.ViewModels
         {
             if (!GameManager.Instance.CurrPlaceable)
             {
-                var barrier = Resources.Load<Barrier>("BarrierTest");
-                GameManager.Instance.CurrPlaceable = barrier.gameObject.Spawn(barrier).GetComponent<Barrier>();
+                var barrier = Resources.Load<Barrier>("Barrier");
+                if (barrier.Cost < GameManager.Instance.Score)
+                {
+                    GameManager.Instance.CurrPlaceable = barrier.gameObject.Spawn(barrier).GetComponent<Barrier>();
+                }
             }
         }
         [Binding]
@@ -29,21 +60,19 @@ namespace Carrasco.ViewModels
             if (!GameManager.Instance.CurrPlaceable)
             {
                 var tower = Resources.Load<Tower>("Tower");
-                GameManager.Instance.CurrPlaceable = tower.gameObject.Spawn(tower).GetComponent<Tower>();
+                if (tower.Cost < GameManager.Instance.Score)
+                {
+                    GameManager.Instance.CurrPlaceable = tower.gameObject.Spawn(tower).GetComponent<Tower>();
+                }
             }
         }
-
-        private void OnPropertyChanged(string propertyName)
+        void Update()
         {
-            if (PropertyChanged != null)
+            if (GameManager.Instance.Score > 0)
             {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
 
-        public void ToggleCanvas()
-        {
-            this.gameObject.SetActive(!this.gameObject.activeSelf);
+                this.Score = "" + Mathf.Round(GameManager.Instance.Score);
+            }
         }
     }
 }

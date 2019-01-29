@@ -12,7 +12,8 @@ namespace Carrasco.Pleaceables
         private float currLifeTime;
         public NavMeshObstacle obstacle;
 
-        public override void Start() {
+        public override void Start()
+        {
             base.Start();
             this.obstacle = GetComponent<NavMeshObstacle>();
             this.obstacle.enabled = false;
@@ -29,10 +30,10 @@ namespace Carrasco.Pleaceables
 
                 }
                 this.currLifeTime += Time.deltaTime;
-            }
+            } 
         }
-
-        public override void ConfirmPlace() {
+        public override void ConfirmPlace()
+        {
             base.ConfirmPlace();
             this.obstacle.enabled = true;
         }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4811528468167871293}
   - component: {fileID: 5269383896858417812}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,6 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2503071593781985265}
+  - {fileID: 2503071593358172918}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45,13 +46,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SurfaceTag: TOWER
-  defaultMaterial: {fileID: 0}
+  Cost: 250
   IsPlaced: 0
   IsConfirmPlacing: 0
   canvas: {fileID: 0}
   collider: {fileID: 0}
   attack: 10
-  attackDelay: 5
+  attackDelay: 1
   attackRange: 10
   projectile: {fileID: 0}
 --- !u!1 &2503071592713212619
@@ -369,8 +370,8 @@ RectTransform:
   - {fileID: 2503071593337210049}
   - {fileID: 2503071594605664801}
   - {fileID: 2503071592713212618}
-  m_Father: {fileID: 2503071593781985265}
-  m_RootOrder: 0
+  m_Father: {fileID: 4811528468167871293}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -483,7 +484,7 @@ GameObject:
   - component: {fileID: 2503071593781985162}
   - component: {fileID: 2503071593781985160}
   m_Layer: 0
-  m_Name: Tower
+  m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -500,8 +501,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2503071593358172918}
+  m_Children: []
   m_Father: {fileID: 4811528468167871293}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

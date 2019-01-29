@@ -8,7 +8,7 @@ namespace Carrasco.Core
     public class GameManager : MonoBehaviour
     {
         public float Score;
-        public float Life = 10;
+        public float Life;
         private BasePlaceable currPlaceable;
 
         public BasePlaceable CurrPlaceable
@@ -51,6 +51,8 @@ namespace Carrasco.Core
         void Start()
         {
             this.input = new InputHandler();
+            this.Score = 500;
+            this.Life = 10;
         }
 
         // Update is called once per frame

@@ -12,12 +12,15 @@ namespace Carrasco.Pleaceables
     public abstract class BasePlaceable : MonoBehaviour, IPoolCallback
     {
         public string SurfaceTag;
-        public Material defaultMaterial;
+        public float Cost;
         public bool IsPlaced;
         public bool IsConfirmPlacing;
         public Canvas canvas;
         public new Collider collider;
-        private new MeshRenderer renderer;
+        protected new MeshRenderer renderer;
+
+
+        private Material defaultMaterial;
         private Outline outline;
 
         public virtual void Start()
@@ -42,8 +45,10 @@ namespace Carrasco.Pleaceables
             this.renderer.material = Resources.Load<Material>("NoPlaceMat");
             foreach (var hit in hits)
             {
-                this.transform.position = hit.point + Vector3.up * .1f;
-                this.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                print(Camera.main.transform.rotation);
+                this.transform.position = hit.point + Vector3.up * .01f;
+                this.transform.rotation = Quaternion.Euler(Vector3.up * Camera.main.transform.rotation.eulerAngles.y);
+                
                 if (hit.transform.tag == this.SurfaceTag)
                 {
                     this.renderer.material = Resources.Load<Material>("CanPlaceMat");
@@ -83,6 +88,7 @@ namespace Carrasco.Pleaceables
         }
         public virtual void ConfirmPlace()
         {
+            GameManager.Instance.Score -= this.Cost;
             this.IsConfirmPlacing = false;
             this.canvas.enabled = false;
             this.collider.enabled = true;

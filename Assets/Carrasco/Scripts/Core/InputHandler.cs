@@ -26,13 +26,12 @@ namespace Carrasco.Core
 
             if (Input.GetMouseButtonUp(0))
             {
-                Debug.Log("Aqui");
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit[] hits = Physics.RaycastAll(ray);
                 foreach (var hit in hits)
                 {
                     Debug.Log(hit.transform.name);
-                    var placeable = hit.transform.GetComponent<BasePlaceable>();
+                    var placeable = hit.transform.GetComponentInParent<BasePlaceable>();
                     if (placeable && placeable.IsPlaced)
                     {
                         if (!GameManager.Instance.SelectedPlacedPlaceable)

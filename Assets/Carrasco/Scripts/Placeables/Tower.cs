@@ -14,7 +14,7 @@ namespace Carrasco.Pleaceables
         {
             WATCHING,
             ATTACKING,
-            RECHARGING
+            LOADING
         }
 
         [SerializeField]
@@ -41,7 +41,7 @@ namespace Carrasco.Pleaceables
         void Update()
         {
             if(!this.IsPlaced) return;
-            if(this.state == ETowerState.RECHARGING) return;
+            if(this.state == ETowerState.LOADING) return;
             if (this.state == ETowerState.WATCHING)
             {
                 var layerMask = LayerMask.GetMask("Mobiles");
@@ -83,7 +83,7 @@ namespace Carrasco.Pleaceables
             go.SetActive(true);
             go.transform.rotation = Quaternion.identity;
             go.transform.LookAt(this.target.transform);
-            this.state = ETowerState.RECHARGING;
+            this.state = ETowerState.LOADING;
             await new WaitForSeconds(this.attackDelay);
             this.state = ETowerState.ATTACKING;
         }
