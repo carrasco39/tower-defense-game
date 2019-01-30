@@ -25,7 +25,7 @@ namespace Carrasco.Core
             }
         }
 
-
+    
         void Start()
         {
             this.currWave = 0;
@@ -65,7 +65,7 @@ namespace Carrasco.Core
 
         void Update()
         {
-            if (this.wavesToPlay != null && this.currSpawnNumber <= 0)
+            if (this.wavesToPlay != null)
             {
                 if (this.EnemiesOnScene() <= 0 || this.currTimer >= this.wavesToPlay[this.currWave].WaveDuration)
                 {
@@ -75,11 +75,21 @@ namespace Carrasco.Core
                 }
                 this.currTimer += Time.deltaTime;
             }
+
         }
 
         int EnemiesOnScene()
         {
             return FindObjectsOfType<Enemy>().Length;
+        }
+
+        public int GetWaveTimeLeft() {
+            if(this.wavesToPlay != null) {
+                var timeLeft = (int)Mathf.Floor(this.wavesToPlay[this.currWave].WaveDuration - this.currTimer);
+                return timeLeft <= 0 ? 0 : timeLeft;
+            }
+
+            return -1;
         }
     }
 }

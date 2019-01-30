@@ -16,6 +16,7 @@ namespace Carrasco.ViewModels
         private string score;
         private string wave;
         private string life;
+        private string waveTimeLeft;
 
         [Binding]
         public string Score
@@ -64,6 +65,19 @@ namespace Carrasco.ViewModels
             }
         }
 
+        [Binding]
+        public string WaveTimeLeft {
+            get {
+                return waveTimeLeft;
+            }
+            set {
+                if(waveTimeLeft == value) return;
+                waveTimeLeft = value;
+
+                OnPropertyChanged("WaveTimeLeft");
+            }
+        }
+
 
 
         private void OnPropertyChanged(string propertyName)
@@ -108,6 +122,7 @@ namespace Carrasco.ViewModels
             }
             this.Wave = $"WAVE {GameManager.Instance.GameWave?.CurrentWave}";
             this.Life = "Life Left " + GameManager.Instance.Life;
+            this.WaveTimeLeft = "Next Wave " + GameManager.Instance.GameWave?.GetWaveTimeLeft();
         }
     }
 }

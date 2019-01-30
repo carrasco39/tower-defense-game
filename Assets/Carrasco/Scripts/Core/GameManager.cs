@@ -64,6 +64,8 @@ namespace Carrasco.Core
                 Debug.Log("GameEnd");
                 SceneManager.LoadScene("End");
             });
+
+            DontDestroyOnLoad(this.gameObject);
         }
 
         // Update is called once per frame
@@ -71,7 +73,7 @@ namespace Carrasco.Core
         {
             this.input.Handle()?.Execute();
 
-            if(this.Life <=0) {
+            if(this.Life <=0 && SceneManager.GetActiveScene().name != "End") {
                 SceneManager.LoadScene("End");
             }
         }

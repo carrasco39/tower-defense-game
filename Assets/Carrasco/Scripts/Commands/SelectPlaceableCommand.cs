@@ -1,4 +1,5 @@
 using Carrasco.Core;
+using Carrasco.Pleaceables;
 using UnityEngine;
 
 namespace Carrasco.Commands
@@ -7,7 +8,21 @@ namespace Carrasco.Commands
     {
         public override void Execute()
         {
-            GameManager.Instance.SelectedPlacedPlaceable.OnPlacedSelected();
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit[] hits = Physics.RaycastAll(ray);
+            foreach (var hit in hits)
+            {
+                Debug.Log(hit.transform.name);
+                var placeable = hit.transform.GetComponentInParent<BasePlaceable>();
+                if (placeable && placeable.IsPlaced)
+                {
+                    if (!GameManager.Instance.SelectedPlacedPlaceable)
+                    {
+                        GameManager.Instance.SelectedPlacedPlaceable = placeable;
+                        GameManager.Instance.SelectedPlacedPlaceable.OnPlacedSelected();
+                    }
+                }
+            }
         }
     }
 }

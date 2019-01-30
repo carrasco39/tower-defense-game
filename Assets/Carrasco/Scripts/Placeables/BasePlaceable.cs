@@ -55,13 +55,11 @@ namespace Carrasco.Pleaceables
                     this.renderer.material = Resources.Load<Material>("CanPlaceMat");
                     this.outline.OutlineColor = new Color32(0, 255, 255, 255);
                 }
-                //TODO: REFACTOR AND REDO IT BETTER
             }
         }
 
         public virtual void PlacePleaceableObject()
         {
-            //print(this.renderer && this.renderer.material.name);
             if (this.renderer && this.renderer.material.name.Contains("CanPlaceMat"))
             {
                 this.IsConfirmPlacing = true;
@@ -110,13 +108,13 @@ namespace Carrasco.Pleaceables
             GameManager.Instance.SelectedPlacedPlaceable = null;
         }
 
-        public void FlipRotation()
+        public void FlipRotation(int axis)
         {
-            switch (rotation)
-            {
-                case 0: this.rotation = 90; break;
-                case 90: this.rotation = 0; break;
+            if(axis == 0) {
+                rotation += 90;
+                return;
             }
+            rotation -= 90;
         }
 
         public virtual void OnRecycleCallback()
@@ -124,7 +122,6 @@ namespace Carrasco.Pleaceables
             this.renderer.material = this.defaultMaterial;
             this.IsPlaced = false;
             this.collider.enabled = false;
-            //this.canvas.SendMessage("ToggleCanvas",0,SendMessageOptions.DontRequireReceiver);
             this.canvas.enabled = false;
             this.outline.enabled = false;
         }
@@ -132,6 +129,5 @@ namespace Carrasco.Pleaceables
         public void OnSpawnCallback()
         {
         }
-        //TODO: ADD OBJECT ROTATION COMMAND
     }
 }
