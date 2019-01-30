@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Carrasco/Scenes/Init.unity
+    guid: 10be31bf9282976488798695c659903b
+  - enabled: 1
+    path: Assets/Carrasco/Scenes/Game.unity
+    guid: c482f9b6ecb83e146907fcaf1ce20398
+  - enabled: 1
+    path: Assets/Carrasco/Scenes/End.unity
+    guid: 6123f6e2d0dd88440a8a6be4ee77a459
   m_configObjects: {}

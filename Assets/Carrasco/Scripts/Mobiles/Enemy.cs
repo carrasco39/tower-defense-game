@@ -8,7 +8,7 @@ namespace Carrasco.Mobiles
     [RequireComponent(typeof(NavMeshAgent))]
     public class Enemy : BaseMobile
     {
-        NavMeshAgent agent;
+        public NavMeshAgent agent;
         Animator animator;
 
         public float KillReward;
@@ -17,8 +17,8 @@ namespace Carrasco.Mobiles
         {
             this.agent = GetComponent<NavMeshAgent>();
             this.animator = GetComponent<Animator>();
+            this.agent.enabled = false;
             this.agent.speed = this.Speed;
-            this.Move();
         }
 
         public override void Update()
@@ -28,22 +28,35 @@ namespace Carrasco.Mobiles
             {
                 this.animator.SetFloat("Speed", this.agent.velocity.sqrMagnitude);
             }
+
+            var cols = Physics.OverlapSphere(this.transform.position, 0.5f);
+            foreach(var col in cols) {
+                if(col.name == "Reach") {
+                    this.gameObject.Recycle(this);
+                    GameManager.Instance.Life--;
+                }
+            }
         }
 
 
         public override void Attack() { }
 
-        public override void Move()
+        public async override void Move()
         {
             var path = GameObject.Find("Reach").transform.position;
+            await new WaitUntil(() => this.agent.enabled);
             this.agent.SetDestination(path);
         }
 
         public override void Die()
         {
-            Debug.Log("oi");
             this.gameObject.Recycle(this);
             GameManager.Instance.Score += KillReward;
+        }
+
+        public override void OnRecycleCallback() {
+            base.OnRecycleCallback();
+            this.agent.enabled = false;
         }
     }
 }

@@ -36,14 +36,14 @@ namespace Carrasco.Mobiles
                 }
         }
 
-        public void OnRecycleCallback()
+        public virtual void OnRecycleCallback()
         {
             this.Health = this.MaxHealth;
         }
 
-        public void OnSpawnCallback()
+        public virtual void OnSpawnCallback()
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
     }
 }

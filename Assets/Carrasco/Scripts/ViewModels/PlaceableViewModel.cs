@@ -11,10 +11,9 @@ namespace Carrasco.ViewModels
     [Binding]
     public class PlaceableViewModel : MonoBehaviour
     {
-        Button[] buttons;
+        public Button[] buttons;
         void Start()
         {
-            this.buttons = this.GetComponentsInChildren<Button>();
             this.ToggleCanvas(0);
         }
 

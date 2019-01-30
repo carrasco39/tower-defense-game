@@ -735,10 +735,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9985fd5e88610754eb21a3f71289ae5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LookAt: {x: 30, y: 0, z: -20}
-  Distance: 15
-  Rotation: -90
-  Tilt: 45
+  LookAt: {x: 14.238773, y: 0, z: -28.939724}
+  Distance: 18
+  Rotation: -58.055573
+  Tilt: 55.764584
   Smoothing: 1
   MoveDampening: 5
   ZoomDampening: 5
@@ -746,8 +746,8 @@ MonoBehaviour:
   TiltDampening: 5
   MinBounds: {x: -50, y: -50, z: -50}
   MaxBounds: {x: 50, y: 50, z: 50}
-  MinDistance: 8
-  MaxDistance: 32
+  MinDistance: 18
+  MaxDistance: 18
   MinTilt: 30
   MaxTilt: 85
   TerrainHeightViaPhysics: 0
@@ -781,11 +781,11 @@ MonoBehaviour:
   FastMoveSpeed: 40
   FastMoveKeyCode1: 304
   FastMoveKeyCode2: 303
-  AllowRotate: 1
+  AllowRotate: 0
   RotateSpeed: 180
-  AllowZoom: 1
+  AllowZoom: 0
   ZoomSpeed: 20
-  AllowTilt: 1
+  AllowTilt: 0
   TiltSpeed: 90
   ResetKey: 99
   IncludePositionOnReset: 0
@@ -821,14 +821,14 @@ MonoBehaviour:
   ScreenEdgeMoveBreaksFollow: 0
   ScreenEdgeBorderWidth: 4
   MoveSpeed: 3
-  AllowPan: 1
-  PanBreaksFollow: 1
+  AllowPan: 0
+  PanBreaksFollow: 0
   PanSpeed: 50
-  AllowRotate: 1
+  AllowRotate: 0
   RotateSpeed: 360
-  AllowTilt: 1
+  AllowTilt: 0
   TiltSpeed: 200
-  AllowZoom: 1
+  AllowZoom: 0
   ZoomSpeed: 500
   RotateInputAxis: Mouse X
   TiltInputAxis: Mouse Y

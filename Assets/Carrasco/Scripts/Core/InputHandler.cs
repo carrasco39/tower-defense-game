@@ -11,6 +11,7 @@ namespace Carrasco.Core
         PlacePlaceableCommand placePlaceable;
         SelectPlaceableCommand selectPlaceable;
         DeselectPlaceableCommand deselectPlaceable;
+        CancelPlaceableCommand cancelPlaceable;
 
 
         public InputHandler()
@@ -19,6 +20,7 @@ namespace Carrasco.Core
             this.placePlaceable = new PlacePlaceableCommand();
             this.selectPlaceable = new SelectPlaceableCommand();
             this.deselectPlaceable = new DeselectPlaceableCommand();
+            this.cancelPlaceable = new CancelPlaceableCommand();
         }
 
         public Command Handle()
@@ -26,6 +28,7 @@ namespace Carrasco.Core
 
             if (Input.GetMouseButtonUp(0))
             {
+                //TODO: Put this logic inside a command.
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit[] hits = Physics.RaycastAll(ray);
                 foreach (var hit in hits)
@@ -50,11 +53,19 @@ namespace Carrasco.Core
                         return placePlaceable;
                     }
                 }
-
             }
 
             if (GameManager.Instance.CurrPlaceable && !GameManager.Instance.CurrPlaceable.IsPlaced)
             {
+                if (Input.GetAxis("Mouse ScrollWheel") != 0)
+                {
+                    GameManager.Instance.CurrPlaceable.FlipRotation();
+                }
+
+                if (Input.GetMouseButton(1))
+                {
+                    return this.cancelPlaceable;
+                }
                 return this.movePlaceable;
             }
 

@@ -68,6 +68,11 @@ namespace Carrasco.Pleaceables
                 return;
             }
 
+            if(this.target && !this.target.isActiveAndEnabled) {
+                this.target = null;
+                this.state = ETowerState.WATCHING;
+            }
+
             if (this.target && this.state == ETowerState.ATTACKING)
             {
                 this.Attack();

@@ -1003,8 +1003,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
-  Speed: 1.2
+  Speed: 2
   health: 100
+  agent: {fileID: 3919857870348773194}
+  KillReward: 70
 --- !u!195 &3919857870348773194
 NavMeshAgent:
   m_ObjectHideFlags: 0

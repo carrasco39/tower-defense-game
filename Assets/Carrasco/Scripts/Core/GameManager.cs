@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using Carrasco.Extensions;
 using Carrasco.Pleaceables;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+
 namespace Carrasco.Core
 {
     public class GameManager : MonoBehaviour
     {
-        public float Score;
-        public float Life;
         private BasePlaceable currPlaceable;
 
+        public float Score;
+        public float Life;
+        public GameWave GameWave;
+        public UnityEvent GameEndEvent;
         public BasePlaceable CurrPlaceable
         {
             get
@@ -51,14 +56,24 @@ namespace Carrasco.Core
         void Start()
         {
             this.input = new InputHandler();
+            this.GameWave = FindObjectOfType<GameWave>();
             this.Score = 500;
             this.Life = 10;
+            this.GameEndEvent.AddListener(() =>
+            {
+                Debug.Log("GameEnd");
+                SceneManager.LoadScene("End");
+            });
         }
 
         // Update is called once per frame
         void Update()
         {
             this.input.Handle()?.Execute();
+
+            if(this.Life <=0) {
+                SceneManager.LoadScene("End");
+            }
         }
     }
 }

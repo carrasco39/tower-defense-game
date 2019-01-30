@@ -20,6 +20,7 @@ namespace Carrasco.Pleaceables
         protected new MeshRenderer renderer;
 
 
+        private float rotation = 0f;
         private Material defaultMaterial;
         private Outline outline;
 
@@ -37,6 +38,7 @@ namespace Carrasco.Pleaceables
 
         public virtual void MovePlaceableObject()
         {
+            if (!this.outline) return;
             this.outline.OutlineColor = new Color32(255, 0, 0, 255);
             this.outline.enabled = true;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -45,10 +47,9 @@ namespace Carrasco.Pleaceables
             this.renderer.material = Resources.Load<Material>("NoPlaceMat");
             foreach (var hit in hits)
             {
-                print(Camera.main.transform.rotation);
                 this.transform.position = hit.point + Vector3.up * .01f;
-                this.transform.rotation = Quaternion.Euler(Vector3.up * Camera.main.transform.rotation.eulerAngles.y);
-                
+                this.transform.rotation = Quaternion.Euler(Vector3.up * this.rotation);
+
                 if (hit.transform.tag == this.SurfaceTag)
                 {
                     this.renderer.material = Resources.Load<Material>("CanPlaceMat");
@@ -105,9 +106,17 @@ namespace Carrasco.Pleaceables
         }
         public virtual void RemovePlaced()
         {
-            Debug.Log("removing");
             this.gameObject.Recycle(this);
             GameManager.Instance.SelectedPlacedPlaceable = null;
+        }
+
+        public void FlipRotation()
+        {
+            switch (rotation)
+            {
+                case 0: this.rotation = 90; break;
+                case 90: this.rotation = 0; break;
+            }
         }
 
         public virtual void OnRecycleCallback()
